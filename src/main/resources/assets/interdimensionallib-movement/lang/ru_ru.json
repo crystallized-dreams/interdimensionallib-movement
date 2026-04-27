@@ -1,0 +1,8 @@
+{
+  "interdimensionallib.key.click_to_sit": "Сидеть по нажатию",
+  "interdimensionallib.key.crawl": "Ползти",
+  "interdimensionallib.key.sit": "Сесть",
+
+  "text.interdimensionallib.sitting_disallowed": "На сервере не разрешено сидеть",
+  "text.interdimensionallib.crawling_disallowed": "На сервере не разрешено ползать"
+}

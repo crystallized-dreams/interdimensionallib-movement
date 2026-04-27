@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "package": "ru.alexalabai.interdimensionallib_movement.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "ControlsOptionsScreenMixin",
+    "PlayerPoseClientMixin"
+  ],
+  "server": [
+    "PlayerPoseServerMixin"
+  ]
+}

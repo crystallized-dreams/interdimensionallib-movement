@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "interdimensionallib-movement",
+	"version": "${version}",
+	"name": "InterdimensionalLib Movement",
+	"description": "Basic additional movement implementation. Adds crawling and sitting.",
+	"authors": [
+		"Alex Alabai"
+	],
+	"contact": {
+		"sources": "https://github.com/crystallized-dreams/interdimensionallib"
+	},
+	"license": "MIT",
+	"icon": "assets/interdimensionallib-movement/icon.png",
+	"environment": "*",
+	"custom": {
+		"modmenu:library": true,
+		"modmenu:parent_mod": "interdimensionallib"
+	},
+	"entrypoints": {
+		"main": ["ru.alexalabai.interdimensionallib_movement.InterdimensionalLibMovement"],
+		"client": ["ru.alexalabai.interdimensionallib_movement.DIMLIBMClient"]
+	},
+	"mixins": [
+		"interdimensionallib-movement.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
