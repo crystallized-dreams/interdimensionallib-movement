@@ -25,7 +25,7 @@ public class ClientGameOptions {
                 SimpleOption.emptyTooltip(),
                 (text, value)->(value?TOGGLE:HOLD),
                 SimpleOption.BOOLEAN,
-                false,
+                true,
                 (val)->{});
         sitToggle=new SimpleOption<>(
                 "kaban-interdimensionallib.key.click_to_sit",
