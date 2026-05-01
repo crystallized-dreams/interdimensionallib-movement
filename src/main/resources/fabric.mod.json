@@ -14,8 +14,10 @@
 	"icon": "assets/interdimensionallib-movement/icon.png",
 	"environment": "*",
 	"custom": {
-		"modmenu:library": true,
-		"modmenu:parent_mod": "interdimensionallib"
+		"modmenu": {
+			"badges": [ "library" ],
+			"parent": "interdimensionallib"
+		}
 	},
 	"entrypoints": {
 		"main": ["ru.alexalabai.interdimensionallib_movement.InterdimensionalLibMovement"],
