@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import ru.alexalabai.interdimensionallib_movement.common.ClientGameOptions;
+import ru.alexalabai.interdimensionallib_movement.common.INTERDIM_MOVE_ClientGameOptions;
 
 @Environment(EnvType.CLIENT)
 @SuppressWarnings("unused")
@@ -22,7 +22,7 @@ abstract class ControlsOptionsScreenMixin extends GameOptionsScreen {
 
     @Unique
     SimpleOption<?>[] options={
-            ClientGameOptions.crawlToggle/*, ClientGameOptions.sitToggle*/
+            INTERDIM_MOVE_ClientGameOptions.crawlToggle/*, ClientGameOptions.sitToggle*/
     };
 
     @Inject(method="addOptions",at=@At("TAIL"))

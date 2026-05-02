@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 import ru.alexalabai.interdimensionallib_movement.InterdimensionalLibMovement;
 import ru.alexalabai.interdimensionallib_movement.entity.renderer.SeatEntityRenderer;
 
-public class ModEntities {
+public class INTERDIM_MOVE_Entities {
     public static final EntityType<SeatEntity> SEAT_ENTITY=reg("seat",
             EntityType.Builder.create(SeatEntity::new, SpawnGroup.MISC)
                     .disableSummon()

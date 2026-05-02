@@ -5,14 +5,14 @@ import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.network.packet.CustomPayload;
 import ru.alexalabai.interdimensionallib_movement.common.types.MovementState;
-import ru.alexalabai.interdimensionallib_movement.packets.ModPackets;
+import ru.alexalabai.interdimensionallib_movement.packets.INTERDIM_MOVE_ServerPackets;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 public record MovementStatePayload(int state) implements CustomPayload {
-    public static final Id<MovementStatePayload> ID = new Id<>(ModPackets.MOVEMENT_STATE_PACKET);
+    public static final Id<MovementStatePayload> ID = new Id<>(INTERDIM_MOVE_ServerPackets.MOVEMENT_STATE_PACKET);
     public static final PacketCodec<RegistryByteBuf, MovementStatePayload> CODEC = PacketCodec.tuple(
             PacketCodecs.INTEGER, MovementStatePayload::state,
             MovementStatePayload::new

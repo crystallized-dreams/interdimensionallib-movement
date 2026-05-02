@@ -5,12 +5,12 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.util.Identifier;
 import ru.alexalabai.interdimensionallib_movement.InterdimensionalLibMovement;
 import ru.alexalabai.interdimensionallib_movement.common.types.MovementState;
-import ru.alexalabai.interdimensionallib_movement.config.ModConfig;
-import ru.alexalabai.interdimensionallib_movement.entity.ModEntities;
+import ru.alexalabai.interdimensionallib_movement.config.INTERDIM_MOVE_ModConfig;
+import ru.alexalabai.interdimensionallib_movement.entity.INTERDIM_MOVE_Entities;
 import ru.alexalabai.interdimensionallib_movement.entity.SeatEntity;
 import ru.alexalabai.interdimensionallib_movement.packets.all.*;
 
-public class ModPackets {
+public class INTERDIM_MOVE_ServerPackets {
     public static final Identifier GRIP_PACKET = Identifier.of(InterdimensionalLibMovement.MOD_ID, "grip");
     public static final Identifier MOVEMENT_STATE_PACKET = Identifier.of(InterdimensionalLibMovement.MOD_ID, "movement_state");
     public static final Identifier RESPONSE_MOVEMENT_STATE_PACKET = Identifier.of(InterdimensionalLibMovement.MOD_ID, "response_movement_state");
@@ -32,10 +32,10 @@ public class ModPackets {
                     ctx.responseSender().sendPacket(new ResponseMovementStatePayload((state==MovementState.NONE)?0:(state==MovementState.CRAWLING)?2:1));
                     break;
                 case 2:
-                    ctx.responseSender().sendPacket(new ResponseSittingAllowedPayload(ModConfig.INSTANCE.canPlayersSit));
+                    ctx.responseSender().sendPacket(new ResponseSittingAllowedPayload(INTERDIM_MOVE_ModConfig.INSTANCE.canPlayersSit));
                     break;
                 case 3:
-                    ctx.responseSender().sendPacket(new ResponseSittingAllowedPayload(ModConfig.INSTANCE.canPlayersCrawl));
+                    ctx.responseSender().sendPacket(new ResponseSittingAllowedPayload(INTERDIM_MOVE_ModConfig.INSTANCE.canPlayersCrawl));
                     break;
             }
 
@@ -45,7 +45,7 @@ public class ModPackets {
                     //if(!ModConfig.INSTANCE.canPlayersSit) return;
                     MovementStatePayload.setState(ctx.player().getUuid(), payload.state());
                     if(payload.state()==1 && ctx.player().isOnGround()) {
-                        SeatEntity ent= ModEntities.SEAT_ENTITY.create(ctx.player().getWorld());
+                        SeatEntity ent= INTERDIM_MOVE_Entities.SEAT_ENTITY.create(ctx.player().getWorld());
                         if(ent==null) {
                             InterdimensionalLibMovement.LOGGER.error("[INTERDIM_MOVEMENT]: Somehow creating seat entity at {} {} {} produced null",
                                     ctx.player().getX(),ctx.player().getY(),ctx.player().getZ());

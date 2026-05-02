@@ -8,7 +8,7 @@ import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 import ru.alexalabai.interdimensionallib_movement.InterdimensionalLibMovement;
 
-public class ClientGameOptions {
+public class INTERDIM_MOVE_ClientGameOptions {
     public static KeyBinding crawlKey;
     public static KeyBinding sitKey;
     public static SimpleOption<Boolean> crawlToggle;

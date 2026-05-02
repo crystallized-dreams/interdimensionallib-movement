@@ -3,7 +3,7 @@
 	"id": "interdimensionallib-movement",
 	"version": "${version}",
 	"name": "InterdimensionalLib Movement",
-	"description": "Basic additional movement implementation. Adds crawling and sitting.",
+	"description": "Implements basic additional movement, such as crawling and sitting.",
 	"authors": [
 		"Alex Alabai"
 	],
@@ -21,7 +21,9 @@
 	},
 	"entrypoints": {
 		"main": ["ru.alexalabai.interdimensionallib_movement.InterdimensionalLibMovement"],
-		"client": ["ru.alexalabai.interdimensionallib_movement.DIMLIBMClient"]
+		"client": [
+			"ru.alexalabai.interdimensionallib_movement.InterdimensionalLibMovementClient"
+		]
 	},
 	"mixins": [
 		"interdimensionallib-movement.mixins.json"

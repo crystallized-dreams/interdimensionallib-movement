@@ -4,10 +4,10 @@ import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.network.packet.CustomPayload;
-import ru.alexalabai.interdimensionallib_movement.packets.ModPackets;
+import ru.alexalabai.interdimensionallib_movement.packets.INTERDIM_MOVE_ServerPackets;
 
 public record ResponseSittingAllowedPayload(boolean allowed) implements CustomPayload {
-    public static final Id<ResponseSittingAllowedPayload> ID = new Id<>(ModPackets.RESPONSE_SITTING_ALLOWED_PACKET);
+    public static final Id<ResponseSittingAllowedPayload> ID = new Id<>(INTERDIM_MOVE_ServerPackets.RESPONSE_SITTING_ALLOWED_PACKET);
     public static final PacketCodec<RegistryByteBuf, ResponseSittingAllowedPayload> CODEC = PacketCodec.tuple(
             PacketCodecs.BOOL, ResponseSittingAllowedPayload::allowed,
             ResponseSittingAllowedPayload::new

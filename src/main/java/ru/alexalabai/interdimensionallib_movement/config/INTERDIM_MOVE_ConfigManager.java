@@ -10,9 +10,9 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class ConfigManager {
-    private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("server.interdimensionallib.json");
-    private static final Path CLIENT_CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("client.interdimensionallib.json");
+public class INTERDIM_MOVE_ConfigManager {
+    private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("interdimensionallib/server.movement.json");
+    private static final Path CLIENT_CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("interdimensionallib/client.movement.json");
     private static final Gson GSON = new GsonBuilder()
             .setPrettyPrinting()
             .create();
@@ -41,17 +41,17 @@ public class ConfigManager {
         }
     }
 
-    public static void save(ModConfig config) {abstractSave(config,CONFIG_PATH);}
-    public static ModConfig load() {
-        ModConfig cfg=abstractLoad(ModConfig.class,CONFIG_PATH);
-        if(cfg==null) return new ModConfig();
+    public static void save(INTERDIM_MOVE_ModConfig config) {abstractSave(config,CONFIG_PATH);}
+    public static INTERDIM_MOVE_ModConfig load() {
+        INTERDIM_MOVE_ModConfig cfg=abstractLoad(INTERDIM_MOVE_ModConfig.class,CONFIG_PATH);
+        if(cfg==null) return new INTERDIM_MOVE_ModConfig();
         return cfg;
     }
 
-    public static void saveClient(ModClientConfig config) {abstractSave(config,CLIENT_CONFIG_PATH); }
-    public static ModClientConfig loadClient() {
-        ModClientConfig cfg=abstractLoad(ModClientConfig.class,CLIENT_CONFIG_PATH);
-        if(cfg==null) return new ModClientConfig();
+    public static void saveClient(INTERDIM_MOVE_ModClientConfig config) {abstractSave(config,CLIENT_CONFIG_PATH); }
+    public static INTERDIM_MOVE_ModClientConfig loadClient() {
+        INTERDIM_MOVE_ModClientConfig cfg=abstractLoad(INTERDIM_MOVE_ModClientConfig.class,CLIENT_CONFIG_PATH);
+        if(cfg==null) return new INTERDIM_MOVE_ModClientConfig();
         return cfg;
     }
 }
