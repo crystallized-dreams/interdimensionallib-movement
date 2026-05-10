@@ -28,7 +28,7 @@ public class INTERDIM_MOVE_ServerPackets {
         ServerPlayNetworking.registerGlobalReceiver(GRIP.ID, (payload, ctx)-> {
             switch (payload.id()) {
                 case 1:
-                    MovementState state=MovementStatePayload.MOVEMENT_STATES.get(ctx.player().getUuid());
+                    MovementState state=InterdimensionalLibMovement.MOVEMENT_STATES.get(ctx.player().getUuid());
                     ctx.responseSender().sendPacket(new ResponseMovementStatePayload((state==MovementState.NONE)?0:(state==MovementState.CRAWLING)?2:1));
                     break;
                 case 2:
@@ -42,8 +42,8 @@ public class INTERDIM_MOVE_ServerPackets {
         });
         ServerPlayNetworking.registerGlobalReceiver(MovementStatePayload.ID, (payload, ctx)->
                 ctx.player().server.execute(()->{
-                    //if(!ModConfig.INSTANCE.canPlayersSit) return;
-                    MovementStatePayload.setState(ctx.player().getUuid(), payload.state());
+                    if(!INTERDIM_MOVE_ModConfig.INSTANCE.canPlayersSit) return;
+                    InterdimensionalLibMovement.setState(ctx.player().getUuid(), payload.state());
                     if(payload.state()==1 && ctx.player().isOnGround()) {
                         SeatEntity ent= INTERDIM_MOVE_Entities.SEAT_ENTITY.create(ctx.player().getWorld());
                         if(ent==null) {

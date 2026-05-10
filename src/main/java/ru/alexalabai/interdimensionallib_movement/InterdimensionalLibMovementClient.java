@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
 import ru.alexalabai.interdimensionallib_movement.common.INTERDIM_MOVE_ClientCommandHandler;
 import ru.alexalabai.interdimensionallib_movement.common.INTERDIM_MOVE_ClientGameOptions;
@@ -82,5 +83,10 @@ public class InterdimensionalLibMovementClient implements ClientModInitializer {
             INTERDIM_MOVE_ModClientConfig.INSTANCE.save();
         });
         INTERDIM_MOVE_ClientPackets.regAll();
+    }
+
+    public static boolean isLocalPlayer(PlayerEntity player) {
+        return MinecraftClient.getInstance().player!=null
+                && MinecraftClient.getInstance().player.getUuid().equals(player.getUuid());
     }
 }
