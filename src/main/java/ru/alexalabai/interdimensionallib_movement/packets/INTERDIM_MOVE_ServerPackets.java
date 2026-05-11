@@ -20,11 +20,11 @@ public class INTERDIM_MOVE_ServerPackets {
     public static void regAll() {
         PayloadTypeRegistry.playC2S().register(GRIP.ID, GRIP.CODEC);
         PayloadTypeRegistry.playC2S().register(MovementStatePayload.ID, MovementStatePayload.CODEC);
-        InterdimensionalLibMovement.LOGGER.info("[INTERDIM]: Registered client packet payloads (C2S)");
+        InterdimensionalLibMovement.LOGGER.info("[INTERDIM_MOVEMENT]: Registered client packet payloads (C2S)");
         PayloadTypeRegistry.playS2C().register(ResponseMovementStatePayload.ID, ResponseMovementStatePayload.CODEC);
         PayloadTypeRegistry.playS2C().register(ResponseSittingAllowedPayload.ID, ResponseSittingAllowedPayload.CODEC);
         PayloadTypeRegistry.playS2C().register(ResponseCrawlingAllowedPayload.ID, ResponseCrawlingAllowedPayload.CODEC);
-        InterdimensionalLibMovement.LOGGER.info("[INTERDIM]: Registered client packet payloads (S2C)");
+        InterdimensionalLibMovement.LOGGER.info("[INTERDIM_MOVEMENT]: Registered client packet payloads (S2C)");
         ServerPlayNetworking.registerGlobalReceiver(GRIP.ID, (payload, ctx)-> {
             switch (payload.id()) {
                 case 1:

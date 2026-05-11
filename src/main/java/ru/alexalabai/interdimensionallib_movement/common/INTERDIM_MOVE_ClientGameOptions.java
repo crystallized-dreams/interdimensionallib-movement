@@ -46,6 +46,6 @@ public class INTERDIM_MOVE_ClientGameOptions {
         KeyBindingHelper.registerKeyBinding(crawlKey);
         KeyBindingHelper.registerKeyBinding(sitKey);
 
-        InterdimensionalLibMovement.LOGGER.info("[INTERDIM_CLIENT]: Registered key bindings");
+        InterdimensionalLibMovement.LOGGER.info("[INTERDIM_MOVEMENT_CLIENT]: Registered key bindings");
     }
 }

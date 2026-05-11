@@ -20,13 +20,13 @@ public class INTERDIM_MOVE_Entities {
                     .build());
 
     public static void regAll() {
-        InterdimensionalLibMovement.LOGGER.info("Registered entities");
+        InterdimensionalLibMovement.LOGGER.info("[INTERDIM_MOVEMENT]: Registered entities");
     }
 
     @Environment(EnvType.CLIENT)
     public static void regRenderers() {
         EntityRendererRegistry.register(SEAT_ENTITY, SeatEntityRenderer::new);
-        InterdimensionalLibMovement.LOGGER.info("Registered entity renderers");
+        InterdimensionalLibMovement.LOGGER.info("[INTERDIM_MOVEMENT_CLIENT]: Registered entity renderers");
     }
 
     private static <T extends Entity> EntityType<T> reg(String name, EntityType<T> entityType) {
